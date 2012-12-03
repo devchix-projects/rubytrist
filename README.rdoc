@@ -1,0 +1,8 @@
+If you have RVM, it will change to ruby 1.9.3 and a gemset
+
+How to install app:
+
+1. Check out app
+2. bundle install
+3. rake db:setup (will run create, seed and migrate if it needs to)
+4. Ready to go
