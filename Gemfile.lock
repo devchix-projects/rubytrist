@@ -1,6 +1,5 @@
-GIT
-  remote: https://github.com/alsmola/nopassword.git
-  revision: 83186ff5d7cf2fc00678089724a8c8c16278c0d9
+PATH
+  remote: ../nopassword
   specs:
     nopassword (0.0.1)
       bcrypt-ruby (~> 3.0.0)
@@ -41,7 +40,6 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
-    bcrypt-ruby (3.0.1-x86-mingw32)
     browser (0.1.5)
     builder (3.0.4)
     columnize (0.3.6)
