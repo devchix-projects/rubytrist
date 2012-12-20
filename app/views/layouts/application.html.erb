@@ -66,7 +66,7 @@
               <h3>Sidebar</h3>
               <ul class="nav nav-list">
                 <strong>
-                  Logged in as: <%= session[:user].name %>
+                  Logged in as: <%= current_user.name %>
                 </strong>
                 <li class="nav-header">Sidebar</li>
                 <li><%= link_to "Link1", "/path1"  %></li>
