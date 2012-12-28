@@ -28,23 +28,6 @@ ActiveRecord::Schema.define(:version => 20121219025106) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "nopassword_login_sessions", :force => true do |t|
-    t.string   "email"
-    t.string   "hashed_code"
-    t.string   "requesting_ip"
-    t.string   "requesting_user_agent"
-    t.string   "activating_ip"
-    t.string   "activating_user_agent"
-    t.boolean  "activated",             :default => false
-    t.datetime "activated_at"
-    t.boolean  "terminated",            :default => false
-    t.datetime "terminated_at"
-    t.datetime "created_at",                               :null => false
-    t.datetime "updated_at",                               :null => false
-    t.string   "requesting_geo"
-    t.string   "activating_geo"
-  end
-
   create_table "postlets", :force => true do |t|
     t.integer  "board_id"
     t.integer  "clip_id"
