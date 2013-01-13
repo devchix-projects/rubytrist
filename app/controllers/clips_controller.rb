@@ -44,7 +44,7 @@ class ClipsController < ApplicationController
 
     respond_to do |format|
       if @clip.save
-        format.html { redirect_to @clip, notice: 'Clip was successfully created.' }
+        format.html { redirect_to :back, notice: 'Clip was successfully created.' }
         format.json { render json: @clip, status: :created, location: @clip }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class ClipsController < ApplicationController
 
     respond_to do |format|
       if @clip.update_attributes(params[:clip])
-        format.html { redirect_to @clip, notice: 'Clip was successfully updated.' }
+        format.html { redirect_to :back, notice: 'Clip was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

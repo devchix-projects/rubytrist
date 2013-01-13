@@ -1,5 +1,19 @@
 <p id="notice"><%= notice %></p>
 
+<%= @board.title %>
+
+<%= form_for @clip do |f| %>
+  <%= f.label :url, 'URL' %>
+  <%= f.text_field :url %>
+
+  <%= f.submit "Add Clip Now" %>
+<% end %>
+<p>
+<% @board.clips.each do |clip| %>
+  <%= link_to clip.url, clip.url %>
+  <br>
+<% end %>
+</p>
 
 <%= link_to 'Edit', edit_board_path(@board) %> |
 <%= link_to 'Back', boards_path %>

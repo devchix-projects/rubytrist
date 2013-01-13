@@ -14,6 +14,7 @@ class BoardsController < ApplicationController
   # GET /boards/1.json
   def show
     @board = Board.find(params[:id])
+    @clip = @board.clips.create
 
     respond_to do |format|
       format.html # show.html.erb
@@ -44,7 +45,7 @@ class BoardsController < ApplicationController
 
     respond_to do |format|
       if @board.save
-        format.html { redirect_to @board, notice: 'Board was successfully created.' }
+        format.html { redirect_to boards_path, notice: 'Board was successfully created.' }
         format.json { render json: @board, status: :created, location: @board }
       else
         format.html { render action: "new" }
