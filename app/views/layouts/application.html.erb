@@ -10,9 +10,9 @@
   <body>
 
     <strong>
-      <% if current_user.name.present? %>
+      <% if current_user && current_user.name.present? %>
         Logged in as: <%= current_user.name %>
-        <%= button_to "Logout", "/session", {:method => :destroy} %>
+        <%= button_to "Logout", "/session", {:method => :delete} %>
       <% end %>
     </strong>
     
