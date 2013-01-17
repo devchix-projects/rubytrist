@@ -9,9 +9,13 @@
   </head>
   <body>
 
-                <strong>
-                  Logged in as: <%= current_user.name %>
-                </strong>
+    <strong>
+      <% if current_user.name.present? %>
+        Logged in as: <%= current_user.name %>
+        <%= button_to "Logout", "/session", {:method => :destroy} %>
+      <% end %>
+    </strong>
+    
     <%= yield %>
 
 

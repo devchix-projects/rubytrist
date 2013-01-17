@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def current_user
-    session[:user] || User.find_or_create_by_name('unknown')
+    session[:user] || false
   end
 
 end
