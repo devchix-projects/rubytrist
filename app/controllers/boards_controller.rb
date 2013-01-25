@@ -14,7 +14,7 @@ class BoardsController < ApplicationController
   # GET /boards/1.json
   def show
     @board = Board.find(params[:id])
-    @clip = @board.clips.create
+    
 
     respond_to do |format|
       format.html # show.html.erb
@@ -42,6 +42,7 @@ class BoardsController < ApplicationController
   # POST /boards.json
   def create
     @board = Board.new(params[:board])
+    @board.user = current_user
 
     respond_to do |format|
       if @board.save

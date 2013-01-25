@@ -1,5 +1,16 @@
 <p id="notice"><%= notice %></p>
 
+<p>All tags</p>
+<% @clip.tags.each do |tag| %>
+<%= tag.tag %>
+<% end %>
+
+<%= form_for :tag, url:{:controller => :clips, :action => :add_tag, :id => @clip.id} do |f| %>
+<%= f.label :tag, "Tag name" %>
+<%= f.text_field :tag %>
+<%= f.submit %>
+<% end %>
+
 
 <%= link_to 'Edit', edit_clip_path(@clip) %> |
 <%= link_to 'Back', clips_path %>

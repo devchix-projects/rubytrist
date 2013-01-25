@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121219025106) do
+ActiveRecord::Schema.define(:version => 20130125021618) do
+
+  create_table "board_tags", :force => true do |t|
+    t.integer "board_id"
+    t.integer "tag_id"
+  end
+
+  add_index "board_tags", ["board_id"], :name => "index_board_tags_on_board_id"
+  add_index "board_tags", ["tag_id"], :name => "index_board_tags_on_tag_id"
 
   create_table "boards", :force => true do |t|
     t.integer  "user_id"
@@ -21,6 +29,13 @@ ActiveRecord::Schema.define(:version => 20121219025106) do
   end
 
   add_index "boards", ["user_id"], :name => "index_boards_on_user_id"
+
+  create_table "clip_tags", :force => true do |t|
+    t.integer  "tag_id"
+    t.integer  "clip_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "clips", :force => true do |t|
     t.string   "url"
@@ -64,6 +79,13 @@ ActiveRecord::Schema.define(:version => 20121219025106) do
   end
 
   add_index "profiles", ["user_id"], :name => "index_profiles_on_user_id"
+
+  create_table "tags", :force => true do |t|
+    t.string   "tag"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"

@@ -1,7 +1,7 @@
 <h1>Listing clips</h1>
 
 <table>
-  <tr>
+  <tr><th>url</th>
     <th></th>
     <th></th>
     <th></th>
@@ -9,6 +9,7 @@
 
 <% @clips.each do |clip| %>
   <tr>
+    <td><%= clip.url %></td>
     <td><%= link_to 'Show', clip %></td>
     <td><%= link_to 'Edit', edit_clip_path(clip) %></td>
     <td><%= link_to 'Destroy', clip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
