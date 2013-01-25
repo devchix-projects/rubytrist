@@ -1,4 +1,7 @@
 Rubytrist::Application.routes.draw do
+
+  resource :session, :only => [:create, :destroy]
+
   resources :users
 
   resources :profiles
@@ -8,8 +11,6 @@ Rubytrist::Application.routes.draw do
   resources :clips
 
   resources :boards
-
-  resource :session, :only => [:create]
 
   get "home/index"
   root :to => 'home#index'
