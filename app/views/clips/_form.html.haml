@@ -1,0 +1,14 @@
+= form_for(@clip) do |f| 
+  - if @clip.errors.any?
+    %div id="error_explanation"
+      %h2=pluralize(@clip.errors.count, "error")} 
+      prohibited this clip from being saved:
+
+      %ul
+        -@clip.errors.full_messages.each do |msg| 
+          %li= msg 
+
+  %div.actions
+    = f.submit 
+
+

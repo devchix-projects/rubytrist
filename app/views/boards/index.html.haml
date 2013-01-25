@@ -1,0 +1,24 @@
+%h1 #{current_user.name}'s boards
+%br
+%strong= link_to 'Create A New Board', new_board_path
+
+%table
+%h3 My Boards
+-unless current_user.boards.empty?
+  -current_user.boards.each do |board| 
+    %tr
+      %td= board.title 
+      %td= link_to 'Show', board 
+      %td= link_to 'Edit', edit_board_path(board) 
+      %td= link_to 'Destroy', board, method: :delete, data: { confirm: 'Are you sure?' } 
+      %br
+%table
+%h3 All Boards
+-@boards.each do |board|
+  %tr
+    %td= board.title 
+    %td= link_to 'Show', board 
+    %td= link_to 'Edit', edit_board_path(board) 
+    %td= link_to 'Destroy', board, method: :delete, data: { confirm: 'Are you sure?' } 
+    %br
+

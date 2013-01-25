@@ -1,0 +1,14 @@
+defaults: &defaults
+  email_server_address: [YOUR MAIL SERVER]
+  email_port: [YOUR MAIL PORT]
+  email_domain: [YOUR MAIL DOMAIN]
+  email_username: [YOUR MAIL USERNAME]
+
+development:     
+ <<: *defaults   
+
+test:
+ <<: *defaults                
+
+production:
+ <<: *defaults
