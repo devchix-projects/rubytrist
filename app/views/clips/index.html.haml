@@ -1,0 +1,17 @@
+%h1 Listing clips
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+-@clips.each do |clip|
+  %tr
+    %td= link_to 'Show', clip
+    %td= link_to 'Edit', edit_clip_path(clip) 
+    %td= link_to 'Destroy', clip, method: :delete, data: { confirm: 'Are you sure?' } 
+  
+%br
+
+= link_to 'New Clip', new_clip_path 
