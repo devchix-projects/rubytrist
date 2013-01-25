@@ -1,14 +1,16 @@
 %p=notice
 
-= @board.title
-= @board.user 
-- form_for @clip do |f| 
+%h4
+  = @board.title
+  by
+  = @board.user.name 
+= form_for @clip do |f| 
   = f.label :url, 'URL' 
   = f.text_field :url 
-
-  = f.submit "Add Clip Now" 
+  = hidden_field_tag :board_id, @board.id
+  = f.submit "Add Clip Now"
 %p
--@board.clips.each do |clip| 
+=@board.clips.each do |clip| 
   = link_to clip.url, clip.url 
   %br
 

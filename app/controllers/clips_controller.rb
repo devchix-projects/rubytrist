@@ -40,15 +40,16 @@ class ClipsController < ApplicationController
   # POST /clips
   # POST /clips.json
   def create
-    @clip = Clip.new(params[:clip])
+    @board = Board.find_by_id params[:board_id]
+    @board.clips.build(params[:clip])
 
     respond_to do |format|
-      if @clip.save
+      if @board.save
         format.html { redirect_to :back, notice: 'Clip was successfully created.' }
-        format.json { render json: @clip, status: :created, location: @clip }
+        format.json { render json: @board, status: :created, location: @board }
       else
         format.html { render action: "new" }
-        format.json { render json: @clip.errors, status: :unprocessable_entity }
+        format.json { render json: @board.errors, status: :unprocessable_entity }
       end
     end
   end
