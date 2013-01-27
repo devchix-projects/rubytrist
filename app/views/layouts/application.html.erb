@@ -8,7 +8,9 @@
 
   </head>
   <body>
-
+    <div class="notice">
+      <%= flash[:notice] %>
+    </div>
     <strong>
       <% if current_user && current_user.name.present? %>
         Logged in as: <%= current_user.name %>
