@@ -1,0 +1,18 @@
+%p=notice
+
+%h4
+  = @board.title
+  by
+  = @board.user.name 
+= form_for @clip do |f| 
+  = f.label :url, 'URL' 
+  = f.text_field :url 
+  = hidden_field_tag :board_id, @board.id
+  = f.submit "Add Clip Now"
+%p
+-@board.clips.each do |clip| 
+  = link_to clip.url, clip.url
+  %br
+= link_to 'Edit', edit_board_path(@board) 
+|
+= link_to 'Back', boards_path 

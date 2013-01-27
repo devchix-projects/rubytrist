@@ -1,0 +1,2 @@
+module PostletsHelper
+end
