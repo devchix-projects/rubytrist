@@ -5,3 +5,10 @@
 require File.expand_path('../config/application', __FILE__)
 
 Rubytrist::Application.load_tasks
+
+namespace :spec do
+  desc "Run the code examples in spec/features"
+  RSpec::Core::RakeTask.new(:features => "db:test:prepare") do |t|
+    t.pattern = "spec/features/**/*_spec.rb"
+  end
+end
