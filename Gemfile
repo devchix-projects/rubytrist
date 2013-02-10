@@ -9,7 +9,7 @@ gem 'jquery-rails'
 gem "haml", "~> 3.1.7"
 
 group :test, :development do 
-	gem 'rspec-rails'
+  gem 'rspec-rails'
   gem 'capybara' 
   gem 'debugger'
   gem 'hpricot'
